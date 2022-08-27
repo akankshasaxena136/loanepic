@@ -1,0 +1,24 @@
+.card-container {
+    background: url('../../assets/5de098d1e71edba8b16410ab4a147e4e.jpg');
+    background-size: cover;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: max-content;
+  }
+ .title {
+    font-size: 35px;
+  }
+  .ntline {
+    font-size: 25px;
+    font-weight: bold;
+    color: midnightblue;
+    font-style: italic;
+  }
+
+  * {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .pl-data {
+    background: url('../../assets/piggy.jpg') no-repeat;
+    background-size: cover;
+  }

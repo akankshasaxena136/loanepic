@@ -1,0 +1,27 @@
+.card-container {
+    background: url('../../assets/K0OpPD.jpg');
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .ntline {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+  }
+
+  .mat-card {
+    background: url('../../assets/bgimage2.jpg');
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .mat-card-subtitle {
+    font-size: 20px;
+    color: black;
+  }
+  .mat-card-subtitle p {
+    font-size: 20px;
+    color: black;
+  }
+  mat-card-title {
+    text-decoration: underline;
+  }

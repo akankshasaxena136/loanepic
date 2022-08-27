@@ -1,0 +1,15 @@
+.card-container {
+    background: url('../../assets/5de098d1e71edba8b16410ab4a147e4e.jpg');
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .ntline {
+    font-size: 25px;
+    font-weight: bold;
+    color: midnightblue;
+    font-style: italic;
+  }
+  .pl-data {
+    background: url('../../assets/piggy.jpg') no-repeat;
+    background-size: cover;
+  }

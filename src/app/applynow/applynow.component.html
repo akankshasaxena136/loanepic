@@ -1,0 +1,33 @@
+<div><b><h3>Apply Here. We will revert you soon!</h3></b></div>
+<form [formGroup]="formData" (ngSubmit)="onSubmit(formData)" style="margin-top: 2%;">
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Name" required>
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error *ngIf= "hasError('name', 'required')">Name is required</mat-error>
+    </mat-form-field><br/>
+    <mat-form-field appearance="legacy">
+      <mat-label>Email Address</mat-label>
+      <input matInput formControlName="email" placeholder="Enter your email">
+      <mat-icon matSuffix>drafts</mat-icon>
+    </mat-form-field><br/>
+    <mat-form-field>
+      <mat-label>Contact No</mat-label>
+      <input type="tel" formControlName="contactno" matInput placeholder="Telephone" required>
+      <mat-icon matSuffix>call</mat-icon>
+      <mat-error *ngIf= "hasError('contactno', 'required')">Contact number is required</mat-error>
+    </mat-form-field><br/>
+    <mat-form-field>
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city" placeholder="City">
+      <mat-icon matSuffix>create</mat-icon>
+    </mat-form-field><br/>
+    <mat-form-field>
+      <mat-label>Query</mat-label>
+      <textarea matInput formControlName="query" placeholder="Query"></textarea>
+      <mat-icon matSuffix>save</mat-icon>
+    </mat-form-field><br/>
+    <button mat-raised-button class="btn-custom" [disabled]="!formData.valid">Apply Now<i class="material-icons">
+        send
+      </i></button>
+    </form>

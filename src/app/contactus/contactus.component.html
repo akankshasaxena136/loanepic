@@ -1,0 +1,48 @@
+<mat-card class="card-container">
+    <mat-card-title><b>For more details visit us</b></mat-card-title><br/>
+    <mat-card-subtitle class="ntline">Swing by for a cup of coffee, or leave us a message:</mat-card-subtitle>
+</mat-card>
+<div class="content">
+    <form [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+      <mat-form-field appearance="standard">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Name" required>
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf= "hasError('name', 'required')">Name is required</mat-error>
+      </mat-form-field><br/>
+      <mat-form-field appearance="legacy">
+        <mat-label>Email Address</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email">
+        <mat-icon matSuffix>drafts</mat-icon>
+      </mat-form-field><br/>
+      <mat-form-field>
+        <mat-label>Contact No</mat-label>
+        <input type="tel" formControlName="contactno" matInput placeholder="Telephone" required>
+        <mat-icon matSuffix>call</mat-icon>
+        <mat-error *ngIf= "hasError('contactno', 'required')">contact Number is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" placeholder="City">
+        <mat-icon matSuffix>create</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Query</mat-label>
+        <textarea matInput formControlName="query" placeholder="Query"></textarea>
+        <mat-icon matSuffix>save</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button class="btn-custom" [disabled]="!formData.valid">Send Now<i class="material-icons">
+          send
+        </i></button>
+      </form>
+  </div>
+  <mat-card class="card-container">
+    <mat-card-title><b>Visit us: </b>
+      <br/>201, 2nd floor, Ratan Singh Complex, 
+      <br/>Atta Market, Sector 27, Noida, UP-201301.
+      <br/><b>We are also reachable at</b></mat-card-title><br/>
+    <mat-card-subtitle class="ntline">
+      <a href="tel:+91 9911465700">+91 9911465700</a> ,
+      <a href="tel:+91 9717466591">+91 9717466591</a>  
+    </mat-card-subtitle>
+</mat-card>

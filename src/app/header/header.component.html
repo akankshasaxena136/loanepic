@@ -1,0 +1,35 @@
+<mat-toolbar class = "hdimg">
+    <mat-toolbar-row #sidenav class="header-align-right">
+      <img src="{{imageSrc}}" alt="{{imageAlt}}" class="img-logo" />
+      <h1 class = "h1style">Loan Epic</h1>
+      <span class="menu-spacer"></span>
+      <div class="fill-rem-space">
+        <a mat-button [routerLink]="'/home'" routerLinkActive #rla="routerLinkActive"><h1> Home</h1> </a>
+        <a mat-button [routerLink]="'/home/about-us'" routerLinkActive="active-link"> <h1>About Us</h1> </a>
+        <a mat-button [routerLink]="'/home/blogs'" routerLinkActive="active-link"> <h1>Blogs</h1> </a>
+        <mat-list-item class="dropdown">
+        <a mat-button #trigger="matMenuTrigger" [matMenuTriggerFor]="services" [routerLink]="'/home/services'"
+        (mouseover)="trigger.openMenu()"> <h1>Services<span class='material-icons'>arrow_drop_down</span></h1>
+</a>   
+      </mat-list-item>
+        <mat-menu #services="matMenu" class="dropdown-content">
+          <span (mouseleave)="trigger.closeMenu()">
+          <button mat-menu-item [routerLink]="'/home/services/personal-loan'" (click)="openPersonalLoan()">Personal Loan</button>
+          <button mat-menu-item [routerLink]="'/home/services/home-loan'">Home Loan</button>
+          <button mat-menu-item [routerLink]="'/home/services/business-loan'">Business Loan</button>
+          </span>
+        </mat-menu>
+        <a mat-button [routerLink]="'/home/contact-us'" (click)="contactus()"> <h1>Contact Us</h1> </a>
+  
+      </div>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    
+
+
+
+
+
+
+    <!-- ***** Before Body tag closing **** -->
+    <!-- <div class="cdk-overlay-container"></div> -->

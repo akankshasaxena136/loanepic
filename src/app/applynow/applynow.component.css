@@ -1,0 +1,35 @@
+form {
+    width: max-content;
+    background-color: #636e72;
+    padding: 60px;
+    border-radius: 10px; 
+  }
+
+  @media(min-width:786px) and (max-width:1024px) {
+    form {
+      width: 70%;
+    }
+    h3 {
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  @media(max-width:600px) and (min-width:480px) {
+    form {
+      width: 50%;
+    }
+    h3 {
+      text-align: center;
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width:480px) {
+    form {
+      width: 80%;
+    }
+    h3 {
+      text-align: center;
+      font-size: 18%;
+    }
+  }
