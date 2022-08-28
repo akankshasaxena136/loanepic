@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, NgForm} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, NgForm, FormGroupDirective} from '@angular/forms';
 import { ContactService } from './contact.service';
 
 @Component({
@@ -11,13 +11,14 @@ export class ContactusComponent implements OnInit {
 
   formData: FormGroup = new FormGroup({});
   email: any;
+  showMsg: boolean = false;
 
   constructor(private builder: FormBuilder,
     private contact: ContactService) {
       this.formData = this.builder.group({
         name: new FormControl('', [Validators.required]),
         email: new FormControl('', [Validators.email]),
-        contactno: new FormControl('', [Validators.required]),
+        contactno: new FormControl('', [Validators.required , Validators.pattern(/^[0-9]{10,10}$/)]),
         city: new FormControl(''),
         query: new FormControl('')
         })
@@ -28,15 +29,15 @@ export class ContactusComponent implements OnInit {
     
   }
 
-  users: any[] = [];
-  userCount = 0;
 
-  onSubmit(formData: any) {
-    this.contact.saveContact(this.formData.value).subscribe(data => {
-      console.log('message::::', data);
-      this.userCount = this.userCount + 1;
-      console.log(this.userCount);
-      this.formData.reset();
+  onSubmit(formData: any, formDirective: FormGroupDirective) {
+
+    this.contact.saveContact(formData.value).subscribe(data => {
+    this.formData.reset();
+    this.showMsg= true;
+    this.formData.markAsPristine();
+    this.formData.markAsUntouched();
+    formDirective.resetForm();
     });
   }
 

@@ -1,12 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-  private mailApi = 'https://mailthis.to/codeninja';
 
   rootURL = 'http://localhost:8080/home';
 
@@ -14,29 +14,32 @@ export class ContactService {
 
   saveContact(user: any) {
   
-    return this.http.post(this.rootURL + '/contact', user);
+    return this.http.post(this.rootURL + '/contact', user,
+    {
+      responseType: 'text'
+    });
     }
 
     saveUser(user: any) {
   
-      return this.http.post(this.rootURL + '/user', user);
+      return this.http.post(this.rootURL + '/user', user,
+      {
+        responseType: 'text'
+      });
       }
 
-  PostMessage(input: any) {
-    return this.http.post(this.mailApi, input, { responseType: 'text' })
-      .pipe(
-        map(
-          (response) => {
-            if (response) {
-              return response;
-            }else{
-              return null;
-            }
-          },
-          (error: any) => {
-            return error;
-          }
-        )
-      )
-  }
+      private handleError(httpError: HttpErrorResponse) {
+        if (httpError.error instanceof ErrorEvent) {
+          // A client-side or network error occurred. Handle it accordingly.
+          console.error('An error occurred:', httpError.error.message);
+        } else {
+          // The backend returned an unsuccessful response code.
+          // The response body may contain clues as to what went wrong.
+          console.error(
+            `Backend returned code ${httpError.status}, ` +
+            `body was: ${httpError.error}`);
+        }
+        // Return an observable with a user-facing error message.
+        return throwError('Something bad happened; please try again later.');
+      }
 }

@@ -1,21 +1,29 @@
-<div><b><h3>Apply Here. We will revert you soon!</h3></b></div>
-<form [formGroup]="formData" (ngSubmit)="onSubmit(formData)" style="margin-top: 2%;">
-    <mat-form-field appearance="standard">
+<div class ="size-head">Apply Here. We will revert you soon!</div>
+<form [formGroup]="formData" #formDirective="ngForm" (ngSubmit)="onSubmit(formData, formDirective)" style="margin-top: 1%;">
+  <div class="row"  *ngIf="showMsg">
+    <div class="col-xs-12">
+      <p class="alert alert-success">
+          <strong>Thanks! We will revert you soon.</strong>
+      </p>
+    </div>
+  </div>
+    <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput formControlName="name" placeholder="Name" required>
+      <input matInput formControlName="name" placeholder="Name"  />
       <mat-icon matSuffix>person</mat-icon>
       <mat-error *ngIf= "hasError('name', 'required')">Name is required</mat-error>
     </mat-form-field><br/>
-    <mat-form-field appearance="legacy">
+    <mat-form-field>
       <mat-label>Email Address</mat-label>
       <input matInput formControlName="email" placeholder="Enter your email">
       <mat-icon matSuffix>drafts</mat-icon>
     </mat-form-field><br/>
     <mat-form-field>
-      <mat-label>Contact No</mat-label>
-      <input type="tel" formControlName="contactno" matInput placeholder="Telephone" required>
-      <mat-icon matSuffix>call</mat-icon>
-      <mat-error *ngIf= "hasError('contactno', 'required')">Contact number is required</mat-error>
+      <mat-label>Mobile No</mat-label>
+      <input type="text" formControlName="contactno" matInput placeholder="Mobile Number" />
+        <mat-icon matSuffix>call</mat-icon>
+        <mat-error *ngIf= "hasError('contactno', 'pattern')">Mobile Number is invalid</mat-error>
+        <mat-error *ngIf= "hasError('contactno', 'required')">Mobile Number is required</mat-error>
     </mat-form-field><br/>
     <mat-form-field>
       <mat-label>City</mat-label>

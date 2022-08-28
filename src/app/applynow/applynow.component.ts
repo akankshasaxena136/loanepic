@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, NgForm} from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators, NgForm, FormGroupDirective} from '@angular/forms';
+// import { ErrorStateMatcher } from '@angular/material';
 import { ContactService } from '../contactus/contact.service';
 
 @Component({
@@ -11,13 +12,17 @@ export class ApplynowComponent implements OnInit {
 
   formData: FormGroup = new FormGroup({});
   email: any;
+  showMsg: boolean = false;
+  errorState = false;
+  // errorMatcher = new CustomErrorStateMatcher();
+  // @ViewChild('form') form;
 
   constructor(private builder: FormBuilder,
     private contact: ContactService) {
       this.formData = this.builder.group({
         name: new FormControl('', [Validators.required]),
         email: new FormControl('', [Validators.email]),
-        contactno: new FormControl('', [Validators.required]),
+        contactno: new FormControl('', [Validators.required , Validators.pattern(/^[0-9]{10,10}$/)]),
         city: new FormControl(''),
         query: new FormControl('')
         })
@@ -35,10 +40,14 @@ export class ApplynowComponent implements OnInit {
     return this.formData.controls[controlName].hasError(errorName);
   }
 
-  onSubmit(formData: any) {
-    this.contact.saveUser(this.formData.value).subscribe(data => {
-      console.log('message::::', data);
-      this.formData.reset();
+  onSubmit(formData: any, formDirective: FormGroupDirective) {
+
+    this.contact.saveUser(formData.value).subscribe(data => {
+    this.formData.reset();
+    this.showMsg= true;
+    this.formData.markAsPristine();
+    this.formData.markAsUntouched();
+    formDirective.resetForm();
     });
   }
 }

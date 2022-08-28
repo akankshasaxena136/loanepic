@@ -30,6 +30,31 @@
   margin-left: 5pt;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover, a:active{
+  color: navy;
+}
+
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+mat-toolbar{
+  border-radius: 3px;
+}
+
+@media(max-width: 959px){
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}
+
      /* Media Query for Mobile Devices */
      @media (max-width: 480px) {
       .hdimg {

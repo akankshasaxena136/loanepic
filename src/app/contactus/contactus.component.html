@@ -3,7 +3,14 @@
     <mat-card-subtitle class="ntline">Swing by for a cup of coffee, or leave us a message:</mat-card-subtitle>
 </mat-card>
 <div class="content">
-    <form [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+    <form [formGroup]="formData" #formDirective="ngForm" (ngSubmit)="onSubmit(formData, formDirective)">
+      <div class="row"  *ngIf="showMsg">
+        <div class="col-xs-12">
+          <p class="alert alert-success">
+              <strong>Thanks! Your response is recorded. We will revert you soon.</strong>
+          </p>
+        </div>
+      </div>
       <mat-form-field appearance="standard">
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" placeholder="Name" required>
@@ -16,10 +23,11 @@
         <mat-icon matSuffix>drafts</mat-icon>
       </mat-form-field><br/>
       <mat-form-field>
-        <mat-label>Contact No</mat-label>
-        <input type="tel" formControlName="contactno" matInput placeholder="Telephone" required>
+        <mat-label>Mobile No</mat-label>
+        <input type="text" formControlName="contactno" matInput placeholder="Contact Number" required>
         <mat-icon matSuffix>call</mat-icon>
-        <mat-error *ngIf= "hasError('contactno', 'required')">contact Number is required</mat-error>
+        <mat-error *ngIf= "hasError('contactno', 'pattern')">Mobile Number is invalid</mat-error>
+        <mat-error *ngIf= "hasError('contactno', 'required')">Mobile Number is required</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>City</mat-label>

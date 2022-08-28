@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { Router } from '@angular/router';
 
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() public sidenavToggle = new EventEmitter();
 
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
@@ -21,6 +23,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public onToggleSidenav = () => { 
+    this.sidenavToggle.emit();
+  }
   openMenu() {
     this.trigger.toggleMenu();
   } 

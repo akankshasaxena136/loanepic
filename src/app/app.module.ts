@@ -28,6 +28,8 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { ContactService } from './contactus/contact.service';
 import { ApplynowComponent } from './applynow/applynow.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     AboutusComponent,
     ContactusComponent,
     ApplynowComponent,
-    BlogsComponent
+    BlogsComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,10 @@ import { BlogsComponent } from './blogs/blogs.component';
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatGridListModule, MatCardModule, MatMenuModule,
-    ReactiveFormsModule, MatFormFieldModule, MatInputModule
+    ReactiveFormsModule, MatFormFieldModule, MatInputModule, FlexLayoutModule,
+  ],
+  exports: [
+    MatListModule,
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]
