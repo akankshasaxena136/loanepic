@@ -165,15 +165,17 @@ font-size: 20px;
 @media (max-width:480px) {
 
   .title {
+    top: 1%;
     left:0%;
-font-size: 15px;
+font-size: 14px;
   }
   .ntline {
     left:0%;
+    top:45%;
     font-size: 13px;
   }
   .mat-grid-tile-header {
-    font-size: 15px;
+    font-size: 14px;
   }
   .mat-grid-tile-footer {
     font-size: 14px;
