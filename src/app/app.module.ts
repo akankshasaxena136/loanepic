@@ -12,6 +12,7 @@ import { MatCardModule } from  '@angular/material/card';
 import { MatMenuModule } from  '@angular/material/menu';
 import { MatFormFieldModule } from  '@angular/material/form-field';
 import { MatInputModule } from  '@angular/material/input';
+import {MatDialogModule } from '@angular/material/dialog';
 
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,7 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ContactusComponent,
     ApplynowComponent,
     BlogsComponent,
-    SidenavListComponent
+    SidenavListComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatGridListModule, MatCardModule, MatMenuModule,
-    ReactiveFormsModule, MatFormFieldModule, MatInputModule, FlexLayoutModule,
+    ReactiveFormsModule, MatFormFieldModule, MatInputModule, FlexLayoutModule, MatDialogModule
   ],
   exports: [
     MatListModule,

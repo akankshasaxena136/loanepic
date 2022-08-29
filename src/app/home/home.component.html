@@ -11,10 +11,14 @@ For loan related queries call on +91 9911465700, +91 9717466591 or fill the form
 <marquee direction="left" style="font-family: Rajdhani, sans-serif; color: #FFFFFF" bgcolor="#00224f" scrolldelay="100" behavior="loop">
     Get Fast Funding and Highest Payout. Join us!
     </marquee>
-<mat-grid-list cols="3" rowHeight="100" gutterSize="5px" class="service-grid" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
-
-    <mat-grid-tile rowspan="6">        
+<mat-grid-list cols="3" rowHeight="100" gutterSize="5px" class="service-grid" [ngClass]="{'is-phone-portrait': isPhonePortrait}">  
+    <mat-grid-tile rowspan="6" >  
+        <div fxHide.gt-xs >
+            <button mat-raised-button routerLink="apply-now">Apply Now</button>
+          </div>
+          <div fxHide.xs>      
         <app-applynow></app-applynow>  
+        </div>
     </mat-grid-tile>
     <mat-grid-tile><mat-grid-tile-header>
         <a href="" target="_self"><b>Personal Loan</b></a></mat-grid-tile-header>

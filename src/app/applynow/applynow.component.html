@@ -1,3 +1,4 @@
+<div>
 <div class ="size-head">Apply Here. We will revert you soon!</div>
 <form [formGroup]="formData" #formDirective="ngForm" (ngSubmit)="onSubmit(formData, formDirective)" style="margin-top: 1%;">
   <div class="row"  *ngIf="showMsg">
@@ -35,7 +36,9 @@
       <textarea matInput formControlName="query" placeholder="Query"></textarea>
       <mat-icon matSuffix>save</mat-icon>
     </mat-form-field><br/>
-    <button mat-raised-button class="btn-custom" [disabled]="!formData.valid">Apply Now<i class="material-icons">
-        send
-      </i></button>
+    <button mat-raised-button class="btn-custom" [disabled]="!formData.valid">Apply Now<i class="material-icons">    send
+    </i></button>&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button class="btn-custom" (click)="onCancel()">Cancel<i class="material-icons">cancel</i>
+    </button>
     </form>
+</div>

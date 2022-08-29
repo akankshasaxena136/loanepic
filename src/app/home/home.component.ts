@@ -9,13 +9,15 @@ import {BreakpointObserver,Breakpoints} from '@angular/cdk/layout';
 export class HomeComponent implements OnInit {
 
   isPhonePortrait = false;
+  name: any;
 
-  constructor(private responsive: BreakpointObserver) { }
+
+  constructor( private responsive: BreakpointObserver) {
+
+  }
 
   ngOnInit() {
-  
-
-  this.responsive.observe(Breakpoints.HandsetPortrait)
+    this.responsive.observe(Breakpoints.HandsetPortrait)
       .subscribe(result => {
 
         this.isPhonePortrait = false; 
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
         }
 
   });
+  }
+  
 }
 
-}

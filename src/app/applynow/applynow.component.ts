@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, NgForm, FormGroupDirective} from '@angular/forms';
-// import { ErrorStateMatcher } from '@angular/material';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective} from '@angular/forms';
 import { ContactService } from '../contactus/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-applynow',
@@ -14,21 +14,29 @@ export class ApplynowComponent implements OnInit {
   email: any;
   showMsg: boolean = false;
   errorState = false;
-  // errorMatcher = new CustomErrorStateMatcher();
-  // @ViewChild('form') form;
+  description: any;
+  name: any;
+
 
   constructor(private builder: FormBuilder,
-    private contact: ContactService) {
-      this.formData = this.builder.group({
-        name: new FormControl('', [Validators.required]),
-        email: new FormControl('', [Validators.email]),
-        contactno: new FormControl('', [Validators.required , Validators.pattern(/^[0-9]{10,10}$/)]),
-        city: new FormControl(''),
-        query: new FormControl('')
-        })
+    private contact: ContactService,
+    private router: Router)
+    {
+      
      }
 
+  onCancel() {
+    this.router.navigate(['/home']);
+  }
+
   ngOnInit() {
+    this.formData = this.builder.group({
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.email]),
+      contactno: new FormControl('', [Validators.required , Validators.pattern(/^[0-9]{10,10}$/)]),
+      city: new FormControl(''),
+      query: new FormControl('')
+      })
   }
 
   getErrorMessage() {
