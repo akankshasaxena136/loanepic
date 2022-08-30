@@ -2,6 +2,8 @@ import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective} from '@angular/forms';
 import { ContactService } from '../contactus/contact.service';
 import { Router } from '@angular/router';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-applynow',

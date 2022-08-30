@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { AppComponent } from './app.component';
 import { ApplynowComponent } from './applynow/applynow.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { BusinessloanComponent } from './businessloan/businessloan.component';
@@ -10,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { HomeloanComponent } from './homeloan/homeloan.component';
 import { LoanservicesComponent } from './loanservices/loanservices.component';
 import { PersonalloanComponent } from './personalloan/personalloan.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},

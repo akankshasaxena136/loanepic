@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {  } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from  '@angular/material/icon';
@@ -12,7 +13,10 @@ import { MatCardModule } from  '@angular/material/card';
 import { MatMenuModule } from  '@angular/material/menu';
 import { MatFormFieldModule } from  '@angular/material/form-field';
 import { MatInputModule } from  '@angular/material/input';
-import {MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+
 
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -51,14 +55,22 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, 
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatGridListModule, MatCardModule, MatMenuModule,
-    ReactiveFormsModule, MatFormFieldModule, MatInputModule, FlexLayoutModule, MatDialogModule
+    ReactiveFormsModule, MatFormFieldModule, MatInputModule, FlexLayoutModule, MatDialogModule, MatListModule,
+    ShareButtonsModule,
+    // .withConfig({
+    //   debug: true,
+    // }),
+    ShareIconsModule,
   ],
   exports: [
     MatListModule,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]
