@@ -14,9 +14,6 @@ import { MatMenuModule } from  '@angular/material/menu';
 import { MatFormFieldModule } from  '@angular/material/form-field';
 import { MatInputModule } from  '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons';
-
 
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -60,11 +57,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatGridListModule, MatCardModule, MatMenuModule,
     ReactiveFormsModule, MatFormFieldModule, MatInputModule, FlexLayoutModule, MatDialogModule, MatListModule,
-    ShareButtonsModule,
-    // .withConfig({
-    //   debug: true,
-    // }),
-    ShareIconsModule,
   ],
   exports: [
     MatListModule,

@@ -2,7 +2,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .card-container {
-  background: url('../../assets/loa1.jpg') no-repeat;
+  background: url('../../assets/cgtmse-scheme.jpg') no-repeat;
   background-size: 100% 100%;
   padding: 15%;
     text-align: left;
@@ -15,8 +15,8 @@
  }
  .title {
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 0%;
+  left: 0%;
   font-size: 35px;
     font-weight: bold;
     color: firebrick;
@@ -25,7 +25,7 @@
   .ntline {
     position: absolute;
     top: 40%;
-    left: 5%;
+    left: 0%;
     /* display: flex; */
     /* justify-content: left; */
     font-size: 31px;
@@ -74,11 +74,11 @@
 
 @media (min-width:786px) and (max-width:1024px) {
   .title {
-    left: 2%;
+    left: 0%;
     font-size: 20px;
   }
   .ntline {
-    left: 2%;
+    left: 0%;
     font-size: 18px;
   }
   .mat-grid-tile-header {
@@ -115,11 +115,11 @@ font-size: 16px;
     width: 30%;
   }
   .title {
-    left:1%;
+    left:0%;
 font-size: 18px;
   }
   .ntline {
-    left:1%;
+    left:0%;
     font-size: 15px;
   }
   .mat-grid-tile-header {
@@ -131,11 +131,11 @@ font-size: 18px;
 }
 @media(min-width:600px) and (max-width:786px) {
   .title {
-    left:1%;
+    left:0%;
 font-size: 20px;
   }
   .ntline {
-    left:1%;
+    left:0%;
     font-size: 18px;
   }
   .mat-grid-tile-header {
@@ -165,9 +165,9 @@ font-size: 20px;
 @media (max-width:480px) {
 
   .title {
-    top: 1%;
+    top: 0%;
     left:0%;
-font-size: 14px;
+font-size: 10px;
   }
   .ntline {
     left:0%;
